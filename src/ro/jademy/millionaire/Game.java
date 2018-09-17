@@ -12,6 +12,6 @@ public class Game {
 //        get user input and check if correct
     }
     public void fiftyFifty(){
-//        show the same question but with only
+//        show the same question but with only two possible answers
     }
 }
