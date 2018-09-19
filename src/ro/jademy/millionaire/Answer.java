@@ -3,8 +3,33 @@ package ro.jademy.millionaire;
 import java.util.Objects;
 
 public class Answer {
-  public  String answer;
-  public boolean isCorrect;
+    private String answer;
+    private boolean isCorrect;
+
+    public Answer(String answer, boolean isCorrect) {
+        this.answer = answer;
+        this.isCorrect = isCorrect;
+    }
+
+    /**
+     * Constructor for incorrect answer.
+     *
+     * @param answer
+     */
+    public Answer(String answer) {
+        this.answer = answer;
+        this.isCorrect = false;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+
+    public boolean getIsCorrect() {
+        return isCorrect;
+    }
+
 
     @Override
     public boolean equals(Object o) {
