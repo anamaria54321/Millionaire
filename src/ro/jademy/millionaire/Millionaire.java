@@ -14,8 +14,11 @@ public class Millionaire {
         initList();
 
         ArrayList<Question> gameQuestions = getGameQuestionList();
-        Game game = new Game(gameQuestions);
 
+        Game game = new Game(gameQuestions);
+        System.out.println("Welcome to Who Wants to be a Millionaire!");
+
+        game.askQuestion();
     }
 
     private static void initList() {
@@ -23,10 +26,17 @@ public class Millionaire {
         Answer q1a2 = new Answer("3");
         Answer q1a3 = new Answer("2");
         Answer q1a4 = new Answer("1");
+
+        System.out.println(q1a1);
+        System.out.println(q1a2);
+        System.out.println(q1a3);
+        System.out.println(q1a4);
+
+
         Question question1 = new Question("Cate picioare are pisica?", 1, Arrays.asList(q1a1, q1a2, q1a3, q1a4));
 
-        Answer q2a1 = new Answer("ovaz", true);
-        Answer q2a2 = new Answer("pisici");
+        CorrectAnswer q2a1 = new CorrectAnswer("ovaz");
+        WrongAnswer q2a2 = new WrongAnswer("pisici");
         Answer q2a3 = new Answer("caini");
         Answer q2a4 = new Answer("porci");
         Question question2 = new Question("Calul mananca?", 1, Arrays.asList(q2a1, q2a2, q2a3, q2a4));

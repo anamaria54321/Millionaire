@@ -15,7 +15,7 @@ public class Question {
         this.answerList.addAll(answerList);
     }
 
-    private Answer getCorrectAnswer() {
+    public Answer getCorrectAnswer() {
         for (Answer answer : answerList) {
             if (answer.getIsCorrect()) {
                 return answer;
@@ -37,6 +37,9 @@ public class Question {
     }
 
     public void printQuestionAndAnswers(){
+        System.out.println(getQuestion());
 
-    };
-}
+        for (Answer answer : getAnswerList()) {
+            System.out.println(answer.getAnswer());
+    }
+}}
