@@ -27,8 +27,8 @@ public class Millionaire {
         WrongAnswer q1a3 = new WrongAnswer("2");
         WrongAnswer q1a4 = new WrongAnswer("1");
 
-        System.out.println(q1a1);
-        System.out.println(q1a2);
+        System.out.println(q1a1.isCorrect());
+        System.out.println(q1a2.isCorrect());
         System.out.println(q1a3);
         System.out.println(q1a4);
 
