@@ -3,7 +3,7 @@ package ro.jademy.millionaire;
 import java.util.Objects;
 
 public abstract class Answer {
-    public String answer;
+    private String answer;
 
     /**
      * Constructor for incorrect answer.
