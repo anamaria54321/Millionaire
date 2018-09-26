@@ -18,30 +18,31 @@ public class Game {
     }
 
     public void askQuestion() {
-        for (Question q: questionList){
-            if(q.getDifficultyLevel() == currentLevel) {
+        for (Question q : questionList) {
+            if (q.getDifficultyLevel() == currentLevel) {
                 q.printQuestionAndAnswers();
+                System.out.println(" Enter the correct answer");
                 answerQuestion();
             }
         }
     }
 
-    private String answerQuestion() {
-
+    public String answerQuestion() {
         return sc.next();
 //             get user input and check if correct
     }
-//    public void checkAnswer(Question question) {
-//        String answerPlayer = answerQuestion();
-//        Answer correctAnswer = question.getCorrectAnswer();
-//        if (answerPlayer.equals(correctAnswer)) {
-//            System.out.println("Congratulations, you answered right!");
-//        } else {
-//            System.out.println("You lose!");
-//            System.exit(0);
-//        }
-//
-//    }
+
+    public void checkAnswer(Question question, String answer) {
+
+        Answer correctAnswer = question.getCorrectAnswer();
+        if (answer.equals(correctAnswer)) {
+            System.out.println("Congratulations, you answered right!");
+        } else {
+            System.out.println("You lose!");
+            System.exit(0);
+        }
+
+    }
 
     public void fiftyFifty() {
 //        show the same question but with only two possible answers

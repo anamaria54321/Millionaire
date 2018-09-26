@@ -15,14 +15,14 @@ public class Question {
         this.answerList.addAll(answerList);
     }
 
-//    public Answer getCorrectAnswer() {
-//        for (Answer answer : answerList) {
-//            if (answer.IsCorrect()) {
-//                return answer;
-//            }
-//        }
-//        return null;
-//    }
+    public Answer getCorrectAnswer() {
+        for (Answer answer : answerList) {
+            if (answer.isCorrect()) {
+                return answer;
+            }
+        }
+        return null;
+    }
 
     public String getQuestion() {
         return question;
@@ -38,8 +38,18 @@ public class Question {
 
     public void printQuestionAndAnswers(){
         System.out.println(getQuestion());
-
+        ArrayList<String> answerVariant = new ArrayList<>();
+        answerVariant.add("A");
+        answerVariant.add("B");
+        answerVariant.add("C");
+        answerVariant.add("D");
+        int i=0;
         for (Answer answer : getAnswerList()) {
-            System.out.println(answer.getAnswer());
+            i++;
+            System.out.println(i+ ") "+ answer.getAnswer());
+
+        }
+
     }
-}}
+
+}

@@ -3,6 +3,7 @@ package ro.jademy.millionaire;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Millionaire {
 
@@ -16,9 +17,24 @@ public class Millionaire {
         ArrayList<Question> gameQuestions = getGameQuestionList();
 
         Game game = new Game(gameQuestions);
+//        System.out.println(gameQuestions);
         System.out.println("Welcome to Who Wants to be a Millionaire!");
+        for (Question q : gameQuestions) {
+            q.printQuestionAndAnswers();
+            System.out.println(" Enter the correct answer");
+            String answer = answerQuestion(); // A, B, C, D sau fifty fifty
+            game.checkAnswer(q, answer);
+//            if (answerQuestion().equals(q.new CorrectAnswer().isCorrect())){
+//                System.out.println("Congratulations, you answered right!");
+//            }
+//            else {
+//                System.out.println("You lose!");
+//               }
+        }
 
-        game.askQuestion();
+
+//            q.checkAnswer();
+//        game.askQuestion();
     }
 
     private static void initList() {
@@ -26,12 +42,6 @@ public class Millionaire {
         WrongAnswer q1a2 = new WrongAnswer("3");
         WrongAnswer q1a3 = new WrongAnswer("2");
         WrongAnswer q1a4 = new WrongAnswer("1");
-
-        System.out.println(q1a1.isCorrect());
-        System.out.println(q1a2.isCorrect());
-        System.out.println(q1a3);
-        System.out.println(q1a4);
-
 
         Question question1 = new Question("Cate picioare are pisica?", 1, Arrays.asList(q1a1, q1a2, q1a3, q1a4));
 
@@ -100,6 +110,13 @@ public class Millionaire {
         gameQuestionList.add(level2QuestionList.get(level1RandomIndex));
         gameQuestionList.add(level3QuestionList.get(level1RandomIndex));
 
+
         return gameQuestionList;
     }
+
+    public static String answerQuestion() {
+        Scanner sc = new Scanner(System.in);
+        return sc.next();
+    }
 }
+
