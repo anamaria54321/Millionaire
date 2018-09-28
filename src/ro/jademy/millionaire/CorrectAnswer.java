@@ -9,8 +9,5 @@ public class CorrectAnswer extends Answer{
     public boolean isCorrect() {
         return true;
     }
-    @Override
-    public String getAnswer() {
-        return answer;
-    }
+
 }
